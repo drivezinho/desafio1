@@ -1,64 +1,40 @@
-const vagao = [5]
-let l = 5
-let r = 5
-function AdcVagaoR(){
-    r++
-    var adicionar = vagao.push(r)
-    console.log(vagao)
-}
-
-function AdcVagaoL(){
-    l--
-    var adicionar = vagao.unshift(l)
-    console.log(vagao)
-}
-
-function RmvVagaoL(){
-    l++
-    var remover = vagao.shift(l)
-    console.log(vagao)
-}
-
-function RmvVagaoR(){
-    r--
-    var remover = vagao.pop(r)
-    console.log(vagao)
-}
 
 function Main(){
-   msgs()
+   Msgs()
 }
 
 
-function msgs(){
+function Msgs(){
 
     const readline = require('readline-sync');
     while (exit = 1){
-        console.log("Trem Iterativo - Opções de Escolha")
+
         console.log("-----------------------------------")
-        console.log("1 - para adicionar vagão pela esquerda")
-        console.log("2 - para adicionar vagão pela direita")
-        console.log("3 - para remover um vagao pela esquerda")
-        console.log("4 - para remover um vagao pela direita")
+        console.log("Desafios para Sys Manager")
+        console.log("-----------------------------------")
+        console.log("1 - Entrar no desafio 1")
+        console.log("2 - Entrar no desafio 2")
         const opcao = readline.question("Escolha um numero acima: ")
         Menu(opcao)
     }
+}
+
+function desafio2(){
+    const Desafio2 = require ('./desafio2')
+}
+
+function desafio1(){
+    const Desafio1 = require ('./desafio1')
 }
 
 function Menu(opcao){
     
     switch (opcao){
         case "1":
-            AdcVagaoL()
+            desafio1()
             break
         case "2":
-            AdcVagaoR()
-            break
-        case "3":
-            RmvVagaoL()
-            break
-        case "4":
-            RmvVagaoR()
+            desafio2()
             break
     }
 }
