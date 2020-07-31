@@ -1,0 +1,23 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drivezinho/desafio1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drivezinho/desafio1/issues"
+  },
+  "homepage": "https://github.com/drivezinho/desafio1#readme",
+  "dependencies": {
+    "jest": "^26.2.1",
+    "readline-sync": "^1.4.10"
+  }
+}

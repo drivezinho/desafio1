@@ -1,53 +1,55 @@
-const lista = []
+const readline = require('readline-sync');
 
-function Desafio2(){
-   CountNumbers()
-}
+class Less{
 
-function DescoMenor(numero){
-    let numerico = parseInt(numero)
-    const qntMenor = []
+    constructor () {
+        this.lista = []
+    }
 
-    for (let exit = 0; exit <= 5; exit++){
-        if (numerico > lista[exit]){
-            qntMenor.unshift(1)
+    DescoMenor(numero){
+        let numerico = parseInt(numero)
+        const qntMenor = []
+
+        for (let exit = 0; exit <= 5; exit++){
+            if (numerico > this.lista[exit]){
+                qntMenor.unshift(1)
+            }
         }
+        return qntMenor.length
     }
-    console.log("-----------------------------------")
-    console.log(qntMenor.length, "são menores")
-    console.log("-----------------------------------")
-}
 
-function OrdenaCres(lista){
-    const readline = require('readline-sync');
-    lista.sort()
-    console.log("-----------------------------------")
-    console.log("Ordenada de forma crescente", lista)
-    console.log("-----------------------------------")
-    console.log("Descubra quantos numeros são menores")
-    const numero = readline.question("Digite um numero: ")
-    DescoMenor(numero)
-}
+    OrdenaCres(lista){
+        lista.sort()
+        return lista
+    }
 
-function AdcNumero(numero){
-    let numerico = parseInt(numero)
-    var adicionar = lista.unshift(numerico)
-}
+    AdcNumero(numero){
+        let numerico = parseInt(numero)
+        this.lista.unshift(numerico)
+    }
 
-function CountNumbers(){
+    CountNumbers(){
 
-    const readline = require('readline-sync');
-    for (let exit = 1; exit <= 5; exit++){
+        for (let exit = 1; exit <= 5; exit++){
+            console.log("-----------------------------------")
+            console.log("Descobrindo o menor numero")
+            console.log("Digite um numero cinco vezes")
+            console.log("-----------------------------------")
+            console.log(this.lista)
+            const numero = readline.question("Digite um numero: ")
+            this.AdcNumero(numero)
+        }
+
         console.log("-----------------------------------")
-        console.log("Descobrindo o menor numero")
-        console.log("Digite um numero cinco vezes")
+        console.log("Ordenada de forma crescente", this.OrdenaCres(this.lista))
         console.log("-----------------------------------")
-        console.log(lista)
+        console.log("Descubra quantos numeros são menores")
+
         const numero = readline.question("Digite um numero: ")
-        AdcNumero(numero)
+
+        console.log("-----------------------------------")
+        console.log(this.DescoMenor(numero), "são menores")
+        console.log("-----------------------------------")
     }
-    OrdenaCres(lista)
 }
-
-
-Desafio2()
+module.exports = Less;
